@@ -12,10 +12,9 @@ public class ServicioCliente {
     private Cliente cliente;
     private List<Cliente> listaClientes = new ArrayList<>();
     private int contador = 0;
-    public ServicioCliente() {
-        cliente = new Cliente();
-    }
+
     public void registrarCliente(){
+        cliente = new Cliente();
         System.out.println("Ingrese su nombre");
         cliente.setNombre(sc.nextLine());
         System.out.println("Ingrese su edad");
