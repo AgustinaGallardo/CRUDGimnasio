@@ -9,13 +9,10 @@ import java.util.Scanner;
 
 public class ServicioCliente {
     Scanner sc = new Scanner(System.in).useDelimiter("\n");
-    private Cliente cliente;
     private List<Cliente> listaClientes = new ArrayList<>();
     private int contador = 0;
-    public ServicioCliente() {
-        cliente = new Cliente();
-    }
     public void registrarCliente(){
+        Cliente cliente = new Cliente();
         System.out.println("Ingrese su nombre");
         cliente.setNombre(sc.nextLine());
         System.out.println("Ingrese su edad");
@@ -41,8 +38,8 @@ public class ServicioCliente {
     }
     public void actualizarCliente(int id, String nombre, int edad, double altura, double peso, String objetivo){
         boolean encontrado = false;
-        for (Cliente c: listaClientes) {
-            if(c.getId() == id){
+        for (int i = 0; i <= listaClientes.size(); i++) {
+            if (listaClientes.get(i).getId() == id){
               /**  c.setNombre(nombre);
                 c.setEdad(edad);
                 c.setAltura(altura);
@@ -50,9 +47,8 @@ public class ServicioCliente {
                 c.setObjetivo(objetivo);*/
               encontrado = true;
               Cliente nuevoCliente = new Cliente(id, nombre, edad, altura,  peso, objetivo);
-              int indice = listaClientes.indexOf(c);
-              listaClientes.set(indice,nuevoCliente);
-                System.out.println("El cliente se edito correctamente");
+              listaClientes.set(i, nuevoCliente);
+              System.out.println("El cliente se edito correctamente");
             }
         }
         if(!encontrado){
