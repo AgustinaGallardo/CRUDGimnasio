@@ -11,6 +11,7 @@ public class ServicioCliente {
     Scanner sc = new Scanner(System.in).useDelimiter("\n");
     private List<Cliente> listaClientes = new ArrayList<>();
     private int contador = 0;
+
     public void registrarCliente(){
         Cliente cliente = new Cliente();
         System.out.println("Ingrese su nombre");
