@@ -51,7 +51,7 @@ public class ServicioRutina {
     }
     public void eliminarRutina(int id){
         boolean encontrdo =false;
-        for (Rutina r:listaRutinas) {
+        for (Rutina r : listaRutinas) {
             if(r.getId() == id){
                 listaRutinas.remove(r);
                 encontrdo = true;
